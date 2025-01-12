@@ -8,10 +8,13 @@ logging.basicConfig(
 )
 
 
-project_name = "Chicken-Disease-Classifier"
+project_name = "chicken_disease_classifier"
 
 list_of_files = [
+    'src/__init__.py',
     f'src/{project_name}/__init__.py',
+    f'src/exception.py',
+    f'src/logger.py',
     f'src/{project_name}/components/__init__.py',
     # f'src/{project_name}/components/',
     f'src/{project_name}/pipelines/__init__.py',
@@ -27,7 +30,8 @@ list_of_files = [
     "requirements.txt",
     "setup.py",
     "research/trails.ipynb",
-    'app.py'
+    'app.py',
+    'templates/index.html'
 ]
 
 
@@ -36,7 +40,7 @@ for filepath in list_of_files:
     filepath = Path(filepath)
     file_dir,file_name=os.path.split(filepath)
     
-    if file_dir!="":
+    if file_dir!="" :
         os.makedirs(file_dir,exist_ok=True)
         logging.info(f"Creating Directory: {file_dir} for the file:{file_name}")
     
